@@ -1,0 +1,419 @@
+general:
+  no-permission: "You do not have permission."
+  only-players: "This command can only be used by players."
+  module-disabled: "Module is disabled: %module%"
+  not-available: "N/A"
+  yes: "Yes"
+  no: "No"
+  enabled: "enabled"
+  disabled: "disabled"
+  list-item: "&7- &f%item%"
+
+commands:
+  help:
+    title: "Pulse commands"
+    item: "&7- &f/pulse %command%"
+  reload:
+    title: "Reload"
+    success: "Reloaded configuration and modules."
+
+module:
+  performance: "Performance"
+  logs: "Logs"
+  communication: "Communication"
+  moderation: "Moderation"
+
+gui:
+  common:
+    back:
+      name: "Back"
+      lore:
+        - "Return"
+  main:
+    title: "Pulse Panel"
+    diagnostics:
+      name: "Diagnostics"
+      lore:
+        - "View live performance"
+    alerts:
+      name: "Alerts"
+      lore:
+        - "View thresholds"
+    reports:
+      name: "Reports"
+      lore:
+        - "Recent player reports"
+    modules:
+      name: "Modules"
+      lore:
+        - "Enable or disable modules"
+    close:
+      name: "Close"
+      lore:
+        - "Close this menu"
+  diagnostics:
+    title: "Pulse Diagnostics"
+    disabled:
+      name: "Performance module disabled"
+      lore:
+        - "Enable it in modules.yml"
+    tps:
+      name: "TPS"
+      lore:
+        - "%value%"
+    mspt:
+      name: "MSPT"
+      lore:
+        - "%value%"
+    ram:
+      name: "RAM"
+      lore:
+        - "%value%"
+    entities:
+      name: "Entities"
+      lore:
+        - "Total: %entities%"
+        - "Chunks: %chunks%"
+        - "Players: %players%"
+    health:
+      name: "Health"
+      score: "Score: %score%"
+      level: "Level: %level%"
+      factors: "Factors: %factors%"
+    trend:
+      name: "Trend"
+      lore: "Trend: %value%"
+    actions:
+      status:
+        name: "Run /pulse status"
+        lore:
+          - "Show live stats"
+      lag:
+        name: "Run /pulse lag"
+        lore:
+          - "Scan lag sources"
+      diagnose:
+        name: "Run /pulse diagnose"
+        lore:
+          - "Full analysis"
+      clearlag-preview:
+        name: "ClearLag preview"
+        lore:
+          - "Show deletions"
+      unload-chunks:
+        name: "Unload chunks"
+        lore:
+          - "Free unused chunks"
+      clearlag-confirm:
+        name: "ClearLag confirm"
+        lore:
+          - "Remove previewed entities"
+  alerts:
+    title: "Pulse Alerts"
+    enabled:
+      name: "Alerts Enabled"
+      lore:
+        - "Status: %value%"
+    tps:
+      name: "TPS Alerts"
+      short: "TPS"
+      lore:
+        - "Enabled: %enabled%"
+        - "Warn < %warn%"
+        - "Crit < %crit%"
+        - "Cooldown: %cooldown%s"
+    mspt:
+      name: "MSPT Alerts"
+      short: "MSPT"
+      lore:
+        - "Enabled: %enabled%"
+        - "Warn > %warn% ms"
+        - "Crit > %crit% ms"
+        - "Cooldown: %cooldown%s"
+    ram:
+      name: "RAM Alerts"
+      short: "RAM"
+      lore:
+        - "Enabled: %enabled%"
+        - "Warn > %warn%%"
+        - "Crit > %crit%%"
+        - "Cooldown: %cooldown%s"
+    entities:
+      name: "Entities/Chunk"
+      short: "Entities"
+      lore:
+        - "Enabled: %enabled%"
+        - "Warn > %warn%"
+        - "Crit > %crit%"
+        - "Cooldown: %cooldown%s"
+    actions:
+      toggle-alerts:
+        name: "Toggle Alerts"
+        lore:
+          - "Click to toggle"
+      toggle-tps:
+        name: "Toggle TPS"
+        lore:
+          - "Enable/disable TPS alerts"
+      toggle-mspt:
+        name: "Toggle MSPT"
+        lore:
+          - "Enable/disable MSPT alerts"
+      toggle-ram:
+        name: "Toggle RAM"
+        lore:
+          - "Enable/disable RAM alerts"
+      toggle-entities:
+        name: "Toggle Entities"
+        lore:
+          - "Enable/disable entity alerts"
+      test:
+        name: "Test Alert"
+        lore:
+          - "Send a test alert"
+    toggle:
+      success: "Alerts %status%."
+    toggle-type:
+      success: "%type% alerts %status%."
+  reports:
+    title: "Pulse Reports"
+    disabled:
+      name: "Moderation module disabled"
+      lore:
+        - "Enable it in modules.yml"
+    item:
+      name: "Report"
+      lore:
+        - "Reporter: %reporter%"
+        - "Target: %target%"
+        - "Reason: %reason%"
+        - "Time: %time%"
+  modules:
+    title: "Pulse Modules"
+    reload:
+      name: "Reload"
+      lore:
+        - "Reload configs"
+    toggle:
+      lore:
+        - "%status%"
+        - "Click to toggle"
+      success: "Module %module% is now %status%."
+
+moderation:
+  disabled: "Moderation module is disabled."
+  report:
+    title: "Report"
+    no-permission: "You do not have permission to report."
+    usage: "Usage: /report <player> <reason>"
+    submitted: "Report submitted."
+    staff-message: "New report: %reporter% -> %target% | %reason%"
+  reports:
+    title: "Reports"
+    none: "No reports found."
+    line: "[%time%] %reporter% -> %target% : %reason%"
+
+alerts:
+  test:
+    title: "Alert Test"
+    message: "&e[Test] This is a sample performance alert."
+    discord: "[TEST] Sample performance alert."
+    sent: "Test alert sent."
+
+clearlag:
+  title: "ClearLag"
+  usage: "Usage: /pulse clearlag preview | confirm"
+  preview:
+    label: "Preview"
+  removed:
+    label: "Removed"
+  confirm-hint: "&7Run &f/pulse clearlag confirm &7to remove."
+  preview-expired: "Preview expired. Run /pulse clearlag preview again."
+  section: "ClearLag %label%"
+  entities-affected: "Entities affected"
+  entity-line: "&7- &f%type%: %count%"
+
+diagnose:
+  title: "Diagnose"
+  causes:
+    title: "Possible causes"
+    none: "&7- &aNo major issues detected."
+  patterns:
+    title: "Patterns detected"
+  recommendations:
+    title: "Recommendations"
+  health-score: "Health score"
+  health-factors: "Health factors"
+  risk: "Risk"
+  risk.low: "LOW"
+  risk.elevated: "ELEVATED"
+  risk.high: "HIGH"
+  issue:
+    low-tps: "Low TPS (%tps%)"
+    high-mspt: "High MSPT (%mspt% ms)"
+    high-ram: "High RAM usage (%ram%%)"
+    entities-per-chunk: "High entities per chunk (avg %entities%)"
+    hoppers: "High hopper density detected"
+    spawners: "High spawner density detected"
+    tile-entities: "High tile entity density detected"
+    redstone: "Redstone activity detected in sampled chunks"
+    forced-chunks: "Many force-loaded chunks detected (%count%)"
+    chunk-tickets: "High chunk ticket count detected (%count%)"
+  pattern:
+    possible-farm: "Possible farm: %type% x%count%"
+    scheduler-load: "High scheduler load: %plugin% (%count% tasks)"
+  recommend:
+    view-distance: "Lower view-distance and simulation-distance."
+    check-configs: "Check server.properties and paper-world-defaults.yml."
+    timings: "Generate a timings report to spot heavy plugins."
+    reduce-redstone: "Reduce redstone clocks and hopper chains."
+    entity-activation: "Adjust entity-activation-range and tick limits."
+    lower-spawns: "Lower mob spawn limits and entity activation ranges."
+    restart: "Restart during low traffic or increase heap size."
+    memory-leak: "Check for memory leaks in plugins."
+    limit-farms: "Limit mob farms and reduce spawn limits."
+    per-player-spawns: "Enable per-player-mob-spawns in Paper configs."
+    hopper-cooldown: "Enable hopper cooldowns and avoid hopper lines."
+    hopper-disable-move: "Use hopper.disable-move-event in Paper configs."
+    spawner-limits: "Reduce spawner limits or mob stacking rates."
+    reduce-containers: "Reduce chest storage or combine containers."
+    fast-redstone: "Enable faster redstone and remove always-on clocks."
+    eigencraft: "Use use-faster-eigencraft-redstone in Paper configs."
+    review-plugins: "Review plugins that keep chunks loaded."
+    reduce-chunk-tickets: "Reduce chunk tickets and keep spawn in memory only if needed."
+    disable-chunk-tickets: "Disable unnecessary plugin chunk tickets."
+    profiling: "Run /timings report or /spark profiler to confirm plugin CPU usage."
+    spark: "Spark detected: try /spark profiler --timeout 60."
+    freeze-risk: "Risk of freeze is high. Consider a restart."
+    none: "No critical issues detected. Keep monitoring."
+
+health:
+  title: "Health"
+  label: "Server health"
+  factors: "Factors"
+  level:
+    good: "GOOD"
+    fair: "FAIR"
+    poor: "POOR"
+    critical: "CRITICAL"
+  reason:
+    low-tps: "low TPS"
+    high-mspt: "high tick time"
+    high-ram: "high RAM usage"
+    dense-chunks: "dense chunks"
+
+history:
+  title: "History"
+  export:
+    no-data: "No history data available to export."
+    success: "History exported: %path%"
+    failed: "Failed to export history: %error%"
+  no-data: "No history data available."
+  no-usable-data: "No usable history data."
+  summary:
+    title: "History summary (%range%)"
+  tps-summary: "TPS avg/min/max"
+  avg-mspt: "Avg MSPT"
+  avg-ram: "Avg RAM"
+  avg-players: "Avg players"
+
+lag:
+  title: "Lag"
+  top-worlds: "Top worlds by entities"
+  world-line: "&7- &f%world% &8(entities: %entities%, chunks: %chunks%)"
+  top-chunks: "Top chunks by entities"
+  chunk-line: "&7- &f%world% &8[%x%,%z%] = %entities% entities"
+  chunk-scan-truncated: "Chunk scan truncated to %max% chunks."
+  top-entities: "Top entity types"
+  entity-line: "&7- &f%type%: %count%"
+  no-scheduler-data: "No scheduler load data available."
+  top-plugins: "Top plugins by scheduler load (approx)"
+  plugin-line: "&7- &f%plugin%: %count% tasks"
+  spark-detected: "Spark detected: use /spark profiler for real CPU data."
+  profiling-hint: "Run /timings report or install Spark for CPU profiling."
+
+killentities:
+  title: "Kill Entities"
+  unknown-type: "Unknown entity type: %type%"
+  removed: "Removed %count% entities."
+
+unloadchunks:
+  title: "Unload Chunks"
+  world-not-found: "World not found. Use world=<name>."
+  success: "Requested unload for %count% chunks in %world%."
+
+status:
+  title: "Status"
+  tps: "TPS (1m/5m/15m)"
+  ram: "RAM"
+  cpu: "CPU"
+  players: "Players"
+  loaded-chunks: "Loaded chunks"
+  entities: "Entities"
+  mspt: "Average tick time"
+
+lookup:
+  disabled: "Logs are disabled in config."
+  title: "Lookup"
+  area-title: "Lookup Area"
+  all: "ALL"
+  type:
+    blocks: "BLOCKS"
+    chests: "CHESTS"
+    commands: "COMMANDS"
+    deaths: "DEATHS"
+  wand:
+    title: "Lookup Wand"
+    name: "&bPulse Lookup Wand"
+    inventory-full: "Inventory full. Dropped the wand on the ground."
+    added: "Lookup wand added to your inventory."
+    instructions1: "&7Left-click to set position 1, right-click to set position 2."
+    instructions2: "&7Sneak + right-click a block to inspect logs."
+    pos1: "Position 1 set: %pos%"
+    pos2: "Position 2 set: %pos%"
+  selection-cleared: "Selection cleared."
+  selection-incomplete: "Selection incomplete. Use /pulse lookup wand to select two points."
+  selection-invalid: "Selection is invalid. Try selecting again."
+  selection-world-mismatch: "Selection must be within the same world."
+  selection-too-large: "Selection too large (%volume% blocks). Max: %max%."
+  selection-too-large-hint: "&7Select a smaller area or adjust logs.max-selection-volume."
+  invalid-type: "Invalid type. Use blocks, chests, commands, or deaths."
+  invalid-since: "Invalid since value. Use 10m, 2h, 1d."
+  radius-requires-coords: "Radius requires x and z when used from console."
+  usage:
+    main: "&7/pulse lookup <player|*> [type=blocks|chests|commands|deaths] [action=break|place|open] [material=] [limit=10] [page=1] [world=world] [x=] [y=] [z=] [radius=] [since=1h] [export]"
+    area: "&7/pulse lookup area [player|*] [type=blocks|chests|commands|deaths] [action=] [material=] [limit=10] [page=1] [since=1h] [export]"
+    tp: "&7/pulse lookup tp [world] <x> <y> <z>"
+    wand: "&7/pulse lookup wand"
+    clear: "&7/pulse lookup clear"
+  tp:
+    usage: "Usage: /pulse lookup tp [world] <x> <y> <z>"
+    invalid-coordinates: "Invalid coordinates."
+    world-not-found: "World not found: %world%"
+    success: "Teleported to %world% %x% %y% %z%."
+  none: "No logs found."
+  export:
+    none: "No logs found to export."
+    success: "Lookup exported: %path%"
+    failed: "Failed to export lookup: %error%"
+  action:
+    break: "BREAK"
+    place: "PLACE"
+    open: "OPEN"
+    tp: "TP"
+    tp-hover: "Teleport to location"
+    scan: "SCAN"
+    scan-hover: "Suggest a nearby lookup"
+  log:
+    block:
+      type: "BLOCK"
+      line: "[%time%] %type% %player% %action% %material% at %world% %x% %y% %z%"
+    chest:
+      type: "CHEST"
+      line: "[%time%] %type% %player% %action% %container% at %world% %x% %y% %z%"
+    command:
+      type: "COMMAND"
+      line: "[%time%] %type% %player% /%command%"
+    death:
+      type: "DEATH"
+      line: "[%time%] %type% %player% cause=%cause% killer=%killer%"

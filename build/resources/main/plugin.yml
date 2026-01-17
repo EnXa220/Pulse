@@ -1,0 +1,43 @@
+name: Pulse
+version: 0.1.0
+main: com.azk.pulse.PulsePlugin
+api-version: 1.21
+author: EnXa
+description: Modular server performance and management suite.
+commands:
+  pulse:
+    description: Pulse core command
+    usage: /pulse <subcommand>
+    permission: pulse.view
+  report:
+    description: Report a player
+    usage: /report <player> <reason>
+    permission: pulse.report
+permissions:
+  pulse.admin:
+    description: Full access to Pulse
+    default: op
+  pulse.gui:
+    description: Access Pulse GUI
+    default: op
+  pulse.mod:
+    description: Moderation access
+    default: op
+  pulse.view:
+    description: View status and info
+    default: true
+  pulse.report:
+    description: Report a player
+    default: true
+  pulse.performance:
+    description: Access performance module
+    default: op
+  pulse.logs:
+    description: Access logs module
+    default: op
+  pulse.communication:
+    description: Access communication module
+    default: op
+  pulse.moderation:
+    description: Access moderation module
+    default: op

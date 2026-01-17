@@ -1,0 +1,67 @@
+general:
+  prefix: ""
+  language: "en"
+storage:
+  type: "sqlite"
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "pulse"
+    user: "root"
+    password: ""
+    use-ssl: false
+performance:
+  history:
+    sample-interval-seconds: 60
+    retention-hours: 720
+    persist: true
+  lag:
+    max-chunks-scan: 2000
+  diagnose:
+    max-chunks-scan: 200
+    block-samples-per-chunk: 256
+  clearlag:
+    remove-types:
+      - ITEM
+      - EXPERIENCE_ORB
+      - ARROW
+    exclude-named: true
+    exclude-tamed: true
+    whitelist-types: []
+    whitelist-worlds: []
+    confirm-timeout-seconds: 30
+    schedule:
+      enabled: false
+      interval-seconds: 900
+      warn-seconds: 30
+      broadcast: true
+      warn-message: "&eClearLag running in %seconds%s."
+      done-message: "&aClearLag removed %count% entities."
+  unloadchunks:
+    keep-spawn-radius: 4
+    player-chunk-radius: 6
+logs:
+  enabled: true
+  log-commands: true
+  log-blocks: true
+  log-chests: true
+  log-deaths: true
+  lookup-default-limit: 10
+  lookup-max-limit: 200
+  wand-material: STICK
+  max-selection-volume: 200000
+communication:
+  enabled: true
+  interval-seconds: 300
+  messages:
+    - "&7Remember to be respectful in chat."
+  player-thresholds:
+    - min: 5
+      message: "&aWe reached 5 players online!"
+  tps-alert:
+    enabled: false
+    threshold: 18.0
+    check-interval-seconds: 30
+    cooldown-seconds: 300
+    message: "&cLow TPS detected: %tps%"
+  restart-message: "&eServer restarted."

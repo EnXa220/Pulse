@@ -1,0 +1,32 @@
+alerts:
+  enabled: true
+  check-interval-seconds: 30
+  cooldown-seconds: 120
+  tps:
+    enabled: true
+    warning: 18.0
+    critical: 15.0
+    cooldown-seconds: 120
+    message: "&eTPS low: %value% (warn < %warn%, crit < %crit%)"
+  mspt:
+    enabled: true
+    warning: 45.0
+    critical: 55.0
+    cooldown-seconds: 120
+    message: "&eTick time high: %value% ms (warn > %warn%, crit > %crit%)"
+  ram:
+    enabled: true
+    warning-percent: 85.0
+    critical-percent: 95.0
+    cooldown-seconds: 180
+    message: "&eRAM usage high: %value%%% (warn > %warn%%, crit > %crit%%)"
+  entities-per-chunk:
+    enabled: true
+    warning: 150
+    critical: 250
+    cooldown-seconds: 180
+    message: "&eEntities per chunk high: %value% (warn > %warn%, crit > %crit%)"
+  notify-permission: "pulse.view"
+  discord:
+    enabled: false
+    webhook-url: ""
